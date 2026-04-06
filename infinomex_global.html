@@ -1043,19 +1043,7 @@ function handleForm(e){
       drawShip(ship);
     });
 
-    planes.forEach((plane,i)=>{
-      plane.x+=plane.dir*plane.sp;
-      const gone=plane.dir===1?plane.x>canvas.width+250:plane.x<-250;
-      if(gone){
-        plane.x=plane.dir===1?-250:canvas.width+250;
-        plane.y=canvas.height*(0.07+Math.random()*0.32);
-        plane.sp=1.2+Math.random()*0.8;
-        plane.sc=0.55+Math.random()*0.45;
-        plane.trail=[];
-      }
-      drawPlane(plane);
-    });
-
+    
     requestAnimationFrame(loop);
   }
   loop();
